@@ -16,3 +16,15 @@ Par exemple
  + Un parcours de graphe
  + Un jeu de la vie
  + ...
+
+Langages
+========
+
+Des langages de JVM
+
+ + Java
+ + Groovy
+ + Scala
+ + Ceylon
+ + Clojure
+ + Golo ?
