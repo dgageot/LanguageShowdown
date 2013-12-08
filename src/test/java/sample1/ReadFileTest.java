@@ -1,12 +1,12 @@
 package sample1;
 
-import com.google.common.io.Resources;
-import org.junit.Test;
+import static org.fest.assertions.Assertions.*;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
-import static org.fest.assertions.Assertions.assertThat;
+import org.junit.*;
+
+import com.google.common.io.*;
 
 public class ReadFileTest {
   ReadFile reader = new ReadFile();
@@ -30,6 +30,13 @@ public class ReadFileTest {
     String content = reader.readWithGuava(file("file.txt"));
 
     assertThat(content).isEqualTo("Hello World\nHello World on second line\n");
+  }
+
+  @Test
+  public void should_read_file_with_puzzler() throws IOException {
+    String content = reader.readWithPuzzler(file("file.txt"));
+
+    assertThat(content).isEqualTo("Hello World\nHello World on second line");
   }
 
   static File file(String path) {

@@ -1,12 +1,10 @@
 package sample1;
 
-import com.google.common.base.Charsets;
-import com.google.common.io.Files;
+import java.io.*;
+import java.util.*;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import com.google.common.base.*;
+import com.google.common.io.*;
 
 public class ReadFile {
   public String read(File file) throws IOException {
@@ -44,5 +42,9 @@ public class ReadFile {
 
   public String readWithGuava(File file) throws IOException {
     return Files.toString(file, Charsets.UTF_8);
+  }
+
+  public String readWithPuzzler(File file) throws IOException {
+    return new Scanner(file).useDelimiter("\\Z").next();
   }
 }
